@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-
+from django.conf import settings
 # Create your views here.
 from django.http import HttpResponse
 
@@ -21,3 +21,6 @@ def index(request):
 
 def about(request):
 	return HttpResponse("The about page")
+
+def debug(request):
+    return HttpResponse(settings.SETTINGS_DIR)
